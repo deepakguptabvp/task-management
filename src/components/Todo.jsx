@@ -141,10 +141,13 @@ const Todo = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-2">
-                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md">
+                    <button 
+                    title="Edit Task"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md">
                       <FaPen className="w-4 h-4" />
                     </button>
                     <button
+                    title="Delete Task"
                       onClick={() => handleDeleteTask(index)}
                       className="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
                     >
