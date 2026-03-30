@@ -47,9 +47,9 @@ const Todo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br bg-gray-900 py-8 px-4">
-      <div className="max-w-4xl mx-auto bg-gray-100 shadow-xl rounded-2xl p-8">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+    <div className="min-h-screen bg-gray-900 py-8 px-4">
+      <div className="max-w-4xl mx-auto shadow-md  rounded-2xl p-8 shadow-gray-50">
+        <h1 className="text-4xl font-bold text-center text-gray-100 mb-8">
           Task Management App
         </h1>
 
@@ -61,7 +61,7 @@ const Todo = () => {
               value={textValue}
               onChange={editValue}
               placeholder="What's the task for today?"
-              className="w-full sm:w-96 px-4 py-3 border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors duration-200 text-gray-700 placeholder-gray-400"
+              className="w-full sm:w-96 px-4 py-3 border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:outline-none transition-colors duration-200 text-gray-100 placeholder-gray-200"
             />
             <button
               onClick={addTasks}
@@ -78,7 +78,7 @@ const Todo = () => {
             onClick={() => setFilterTasks("all")}
             className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
               filterTasks === "all"
-                ? "bg-gray-800 text-white shadow-lg"
+                ? "bg-gray-600 text-white shadow-lg"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
@@ -141,13 +141,14 @@ const Todo = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-2">
-                    <button 
-                    title="Edit Task"
-                    className="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md">
+                    <button
+                      title="Edit Task"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+                    >
                       <FaPen className="w-4 h-4" />
                     </button>
                     <button
-                    title="Delete Task"
+                      title="Delete Task"
                       onClick={() => handleDeleteTask(index)}
                       className="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
                     >
