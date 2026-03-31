@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { FaPen, FaTrash } from "react-icons/fa";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const Todo = () => {
   const [textValue, setTextValue] = useState(""); // edit text in input box.
-  const [taskList, setTaskList] = useState([]); // show all task list.
+  const [taskList, setTaskList] = useLocalStorage("tasks", []); // show all task list.
   const [filterTasks, setFilterTasks] = useState("all"); //filter task state.
 
   // Edit in input list
   const editValue = (e) => {
     e.preventDefault();
     setTextValue(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   // List of Tasks
@@ -19,7 +20,7 @@ const Todo = () => {
     if (!value) return;
 
     setTaskList((prev) =>
-      prev.some((item) => item.text === value)
+      prev.some((item) => item.text.toLowerCase() === value.toLowerCase())
         ? prev
         : [...prev, { text: value, completed: false }],
     );
@@ -41,13 +42,14 @@ const Todo = () => {
     if (filterTasks === "completed") return task.completed;
     return true;
   });
+
   // delete task by id
   const handleDeleteTask = (id) => {
     setTaskList((prev) => prev.filter((_, index) => index !== id));
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-8 px-4">
+    <div className="min-h-screen bg-gray-900 py-8 px-4 ">
       <div className="max-w-4xl mx-auto shadow-md  rounded-2xl p-8 shadow-gray-50">
         <h1 className="text-4xl font-bold text-center text-gray-100 mb-8">
           Task Management App
