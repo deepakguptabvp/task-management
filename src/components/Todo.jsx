@@ -49,11 +49,11 @@ const Todo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-8 px-4 ">
-      <div className="max-w-4xl mx-auto shadow-md  rounded-2xl p-8 shadow-gray-50">
-        <h1 className="text-4xl font-bold text-center text-gray-100 mb-8">
+    <div className="min-h-screen">
+      <div className="max-w-4xl mx-auto shadow-md  ">
+        {/* <h1 className="text-4xl font-bold text-center text-gray-100 mb-8">
           Task Management App
-        </h1>
+        </h1> */}
 
         {/* Add Task */}
         <div className="my-10">

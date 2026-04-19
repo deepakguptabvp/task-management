@@ -1,14 +1,9 @@
-import React, { useEffect } from "react";
-// import Hero from "../components/Hero";
-import Todo from "../components/Todo";
+import React from 'react'
 
 const Home = () => {
   return (
-    <div className="container">
-      {/* <Hero /> */}
-      <Todo />
-    </div>
-  );
-};
+    <div>Home</div>
+  )
+}
 
-export default Home;
+export default Home
